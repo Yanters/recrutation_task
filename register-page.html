@@ -332,7 +332,8 @@
 
     #testimonials-carousel>.carousel-indicators>li {
       display: inline-block;
-      width: calc(100% / 4 - 50px);
+      /* updated the formula below to match the number of testimonials */
+      width: calc(100% / 5 - 50px);
       height: 0.6rem;
       margin: 20px;
       text-indent: -999px;
@@ -344,7 +345,8 @@
 
     #testimonials-carousel .carousel-indicators .active {
       display: inline-block;
-      width: calc(100% / 4 - 50px);
+      /* updated the formula below to match the number of testimonials */
+      width: calc(100% / 5 - 50px);
       height: 0.6rem;
       margin: 20px;
       text-indent: -999px;
@@ -881,6 +883,8 @@
           <li data-target="#testimonials-carousel" data-slide-to="1"></li>
           <li data-target="#testimonials-carousel" data-slide-to="2"></li>
           <li data-target="#testimonials-carousel" data-slide-to="3"></li>
+          <!-- added new testimonial-carousel element to the list -->
+          <li data-target="#testimonials-carousel" data-slide-to="4"></li>
         </ol>
 
         <div class="carousel-inner">
@@ -979,6 +983,33 @@
                 <div class="testimonials-picture-name">
                   <h2>Latarasa Abdelmalek</h2>
                   <p>Monitoring and Performance Consultant</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Added another element to the carousel - used picture and text -->
+          <div class="item">
+            <div class="testimonials-quote-wrap">
+              <div class="testimonials-quote-element">
+                <div class="testimonials-quote">
+                  <p>I am a motivated and dedicated Junior React Developer with 6 months of experience in building web
+                    applications. I am a team player and constantly seeking opportunities to improve my skills and
+                    knowledge. I am eager to take on new challenges and participate in innovative projects in the IT
+                    industry.</p>
+                  <img class="testimonial-quote-mark-1"
+                    src="https://community.dynatrace.com/html/assets/quote_black.png">
+                  <img class="testimonial-quote-mark-2"
+                    src="https://community.dynatrace.com/html/assets/quote_black.png">
+                </div>
+              </div>
+              <div class="testimonials-picture">
+                <div class="testimonials-picture-avatar">
+                  <img
+                    src="https://media.licdn.com/dms/image/C4E03AQFyjZwRl1gYpA/profile-displayphoto-shrink_800_800/0/1625167558333?e=2147483647&v=beta&t=EJlTwG8xbFDg6iMJc6xC2garOsIFGNNeOlSdZCw698E"></img>
+                </div>
+                <div class="testimonials-picture-name">
+                  <h2>Konrad Nowicki</h2>
+                  <p>Junior Fullstack Developer</p>
                 </div>
               </div>
             </div>
