@@ -131,6 +131,19 @@
       flex-wrap: wrap;
     }
 
+    @media only screen and (max-width: 900px) {
+
+      /* Change the scaling of the benefits section below 900px screen size - divide elements into 2 rows with 3 elements each. */
+      .benefits-content-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        grid-gap: 10px;
+        justify-items: center;
+      }
+
+    }
+
     .benefits-content-list-element {
       width: calc(100% / 6);
       display: flex;
@@ -146,6 +159,13 @@
 
     .benefits-content-list-icon>img {
       height: 60px;
+      /* Set transition for icon scaling on hover. */
+      transition: transform 0.2s;
+    }
+
+    /* Make icons a little bit bigger on hover. */
+    .benefits-content-list-icon:hover>img {
+      transform: scale(1.1);
     }
 
     .benefits-content-list-description,
