@@ -129,6 +129,7 @@
  
 <#-- render message tile in message list -->
 <#macro renderMessage msg showBoard=true isOdd=false isFirst=false isLast=false isFloated=false>
+   <#--  delcaration of solved which is used as variable holding className for multiple elements  -->
    <#assign solved = "" />
    <#assign unread = "" />
    <#assign floated = "" />
@@ -151,7 +152,9 @@
        <#assign msg_status_txt = "theme-lib.general.thread-floated" />
    </#if>
    <#if msg.conversation.solved>
-       <#assign solved = "custom-thread-solved" />
+   <#--  Change the name of class for solved threads (choose your own name)  -->
+   <#--  we are assigning the class name to the variable solved  -->
+       <#assign solved = "personalized-thread-solved" />
        <#assign msg_status_icon = "custom-thread-solved" />
        <#assign msg_status_txt = "theme-lib.general.thread-solved" />
    </#if>
