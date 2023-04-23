@@ -7,13 +7,15 @@
 <#assign sorting = http.request.parameters.name.get("sort", "") />
  
 <#-- page size -->
-<#assign pageSize = coreNode.settings.name.get("layout.messages_per_page_linear", "10")?number />
-<#if user.registered>
+<#--  Set up page size to exactly 30 posts per page (instead getting it from the other source, set the setting always to the specific number)  -->
+<#assign pageSize = 30 />
+<#--  we dont need this code below as we are setting the page size to 30 always  -->
+<#--  <#if user.registered>
    <#assign pageSizeUser = settings.name.get("layout.messages_per_page_linear") />
    <#if pageSizeUser?number != pageSize?number>
        <#assign pageSize = pageSizeUser />
    </#if>
-</#if>
+</#if>  -->
  
 <#if webuisupport.path.parameters.name.get("label-name")??>
    <#assign label = webuisupport.path.parameters.name.get("label-name").getText() />

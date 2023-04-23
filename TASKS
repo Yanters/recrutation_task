@@ -19,7 +19,7 @@ The knowledge of those technologies is not necessary to solve the problems. as t
 
 FOR theme-lib.message-list 
 
-1. Set up page size to exactly 30 posts per page (instead getting it from the other source, set the setting always to the specific number)
+1. Set up page size to exactly 30 posts per page (instead getting it from the other source, set the setting always to the specific number) ✓
 
 2. Change the name of class for solved threads (choose your own name)
 
