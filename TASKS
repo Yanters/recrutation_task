@@ -20,10 +20,10 @@ FOR theme-lib.message-list
 
 2. Change the name of class for solved threads (choose your own name) ✓
 
-3. Add additional sorting methods to the post list and add it to the dropdown menu
-   -Post time, from the newest to oldest
-   -The lowest number of kudos
-   -Unanswered questions
-   -Questions with no solution
+3. Add additional sorting methods to the post list and add it to the dropdown menu ✓
+   -Post time, from the newest to oldest ✓
+   -The lowest number of kudos ✓
+   -Unanswered questions ✓
+   -Questions with no solution ✓
 
 Create a fork out of this repositorium and send us a link to it.

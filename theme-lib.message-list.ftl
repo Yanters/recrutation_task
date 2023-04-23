@@ -40,11 +40,31 @@
    <#case "kudos">
        <#assign orderClause = "ORDER BY kudos.sum(weight) DESC " />
    <#break>
+   <#-- Sorting by the lowest number of kudos  -->
+   <#case "lowest kudos">
+       <#assign orderClause = "ORDER BY kudos.sum(weight) ASC " />
+   <#break>
    <#case "views">
        <#assign orderClause = "ORDER BY metrics.views DESC " />
    <#break>
    <#case "replies">
        <#assign orderClause = "ORDER BY replies.count(*) DESC " />
+   <#break>
+   <#--  Sorting by post time, from the newest to oldest  -->
+   <#case "post time">
+        <#assign orderClause = "ORDER BY post_time DESC " />
+   <#break>
+   <#--  Sorting by unanswered questions  -->
+   <#case "unanswered">
+        <#assign whereClause += " AND replies.count(*) = 0 " />
+        <#--  Additional ordering by post time  -->
+        <#assign orderClause = "ORDER BY post_time DESC " />
+   <#break>
+   <#--  Sorting by questions with no solutions  -->
+   <#case "no solutions">
+        <#assign whereClause += " AND conversation.solved = false " />
+        <#--  Additional ordering by replies count  -->
+        <#assign orderClause = "ORDER BY replies.count(*) DESC " />
    <#break>
    <#default>
        <#assign orderClause = "ORDER BY conversation.last_post_time DESC " />
@@ -78,6 +98,14 @@
                    <option value="views" <#if sorting == 'views'>selected</#if>>${text.format("theme-lib.community-activity.views")}</option>
                    <option value="replies" <#if sorting == 'replies'>selected</#if>>${text.format("theme-lib.community-activity.replies")}</option>
                    <option value="kudos" <#if sorting == 'kudos'>selected</#if>>${text.format("theme-lib.community-activity.kudos")}</option>
+                   <#-- Sorting by the lowest number of kudos  -->
+                   <option value="lowest kudos" <#if sorting == 'lowest kudos'>selected</#if>>${text.format("theme-lib.community-activity.lowest-kudos")}</option>
+                    <#--  Sorting by post time, from the newest to oldest  -->
+                    <option value="post time" <#if sorting == 'post time'>selected</#if>>${text.format("theme-lib.community-activity.post-time")}</option>
+                    <#--  Sorting by unanswered questions  -->
+                    <option value="unanswered" <#if sorting == 'unanswered'>selected</#if>>${text.format("theme-lib.community-activity.unanswered")}</option>
+                    <#--  Sorting by questions with no solutions  -->
+                    <option value="no solutions" <#if sorting == 'no solutions'>selected</#if>>${text.format("theme-lib.community-activity.no-solutions")}</option>
                </select>
                <#if page.interactionStyle=="idea">
                  <@component id="custom.idea.status.label" />
